@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>albumName</key>
+	<string>Dire Straits (Remastered)</string>
+	<key>artistName</key>
+	<string>Dire Straits</string>
+	<key>coverURL</key>
+	<string>https://lastfm-img2.akamaized.net/i/u/300x300/29ef751d95655010324363bc07be3348.png</string>
+	<key>currentPosition</key>
+	<string>125</string>
+	<key>isLoved</key>
+	<string>false</string>
+	<key>songChanged</key>
+	<string>false</string>
+	<key>songDuration</key>
+	<string>348</string>
+	<key>songName</key>
+	<string>Sultans Of Swing</string>
+</dict>
+</plist>
