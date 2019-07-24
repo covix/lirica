@@ -6,6 +6,11 @@ import subprocess
 LYRIC_FILE = 'songMeta.plist'
 
 
+def clean_title(title):
+    title = title.split(' - Live')[0]
+    return title
+
+
 def main():
     current = None
 
@@ -19,12 +24,16 @@ def main():
         artist = pl['artistName']
         title = pl['songName']
 
+        title = clean_title(title)
+
         if (artist, title) == current:
             continue
             
         current = artist, title
 
-        artist_song_file = os.path.join('songs', artist, f'{title}.plist')
+        title_path = title.replace('/', ' ')
+
+        artist_song_file = os.path.join('songs', artist, f'{title_path}.plist')
         os.makedirs(os.path.join('songs', artist), exist_ok=True)
         if not os.path.exists(artist_song_file):
             with open(artist_song_file, 'wb') as f:
@@ -32,14 +41,16 @@ def main():
 
         print(f'{artist}: {title}')
 
-        lyric_file = os.path.join('songs', artist, f'{title}.txt')
-        lyrics = PyLyrics.getLyrics(artist, title)
+        lyric_file = os.path.join('songs', artist, f'{title_path}.txt')
+        try:
+            lyrics = PyLyrics.getLyrics(artist, title)
+            with open(lyric_file, 'w') as f:
+                f.write(lyrics)
+            print(lyrics)
 
-        # check if not none
-        with open(lyric_file, 'w') as f:
-            f.write(lyrics)
+        except ValueError as e:
+            print(e)
 
-        print(lyrics)
 
 
 if __name__ == '__main__':
