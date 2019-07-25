@@ -8,6 +8,7 @@ LYRIC_FILE = 'songMeta.plist'
 
 def clean_title(title):
     title = title.split(' - Live')[0]
+    title = title.split(' - Remastered')[0]
     return title
 
 
@@ -50,7 +51,7 @@ def main():
 
         except ValueError as e:
             print(e)
-
+            print(f'Artist: {artist}, Title: {title}')
 
 
 if __name__ == '__main__':
