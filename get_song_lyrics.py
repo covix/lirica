@@ -9,6 +9,7 @@ LYRIC_FILE = 'songMeta.plist'
 def clean_title(title):
     title = title.split(' - Live')[0]
     title = title.split(' - Remastered')[0]
+    title = title.split(' - ')[0]
     return title
 
 
