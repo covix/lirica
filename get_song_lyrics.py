@@ -41,7 +41,8 @@ def main():
             with open(artist_song_file, 'wb') as f:
                 plistlib.dump(pl, f)
 
-        print(f'{artist}: {title}')
+        print('\n---------------------------------\n')
+        print(f'{artist}: {title}\n')
 
         lyric_file = os.path.join('songs', artist, f'{title_path}.txt')
         try:
